@@ -1,0 +1,28 @@
+// colors
+$barossa: #42313a;
+$astronaut-blue: #013a61;
+$bali-hai: #889bab;
+$lily-white: #eaeaea;
+$white: #fff;
+$sushi: #78a22f;
+
+// cc map
+$colors:(
+  default:(
+    bg: $lily-white,
+    txt: $barossa,
+    primary: $sushi,
+    accent: $astronaut-blue
+  ),
+
+  alt:(
+    bg: $white,
+    txt: $white,
+    primary: darken($sushi, 2.5%)
+  ),
+
+  button: (
+    bg: $bali-hai,
+    hover: darken($bali-hai, 2.5%)
+  )
+);

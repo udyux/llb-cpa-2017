@@ -1,0 +1,40 @@
+// font stack
+@mixin font-stack($ff, $weight: normal) {
+  font-family: #{$ff}, Helvetica, Arial, sans-serif;
+  font-weight: $weight;
+}
+
+// font families
+%ff--book  { @include font-stack('Campton-Book') }
+%ff--medium  { @include font-stack('Campton-Medium', 500) }
+%ff--semi   { @include font-stack('Campton-SemiBold', 600) }
+%ff--bold   { @include font-stack('Campton-Bold', 700) }
+
+// extend placeholders
+%txt--body {
+  @extend %ff--book;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+%txt--title {
+  @extend %ff--bold;
+  font-size: 34px;
+  line-height: 1;
+}
+
+%txt--subtitle {
+  @extend %ff--medium;
+  font-size: 18px;
+}
+
+%txt--button {
+  @extend %ff--semi;
+  font-size: 14px;
+  line-height: .8;
+  text-transform: uppercase;
+}
+
+%txt--label {
+  @extend %ff--medium;
+}
