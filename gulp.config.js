@@ -7,7 +7,7 @@ const config = {
   },
 
   sass: {
-		src: ['./sass/index.scss'],
+		src: ['./sass/*.scss'],
 		dest: './assets/css',
 		options: { indentedSyntax: false },
 		autoprefixer: {
@@ -16,7 +16,7 @@ const config = {
 	},
 
 	js: {
-		src: './scripts/index.js',
+		src: './scripts/*.js',
 		dest: './assets/js',
 		eslint: { fix: true },
 		babel: {

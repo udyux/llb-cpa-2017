@@ -1,0 +1,5 @@
+.button {
+  @include type(button);
+  padding: 1rem 2.5rem;
+  border: 3px solid currentColor;
+}

@@ -1,5 +1,5 @@
 {
-  "name": "llb-cpa",
+  "name": "llb-cpa-static",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -39,5 +39,8 @@
   "engines": {
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
+  },
+  "dependencies": {
+    "scrollto-with-animation": "^4.5.2"
   }
 }

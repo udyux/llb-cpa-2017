@@ -1,10 +1,12 @@
 body {
-  @extend %txt--body;
+  @include type(body);
+  color: cc(white);
+  background-color: cc(white, darker);
   position: relative;
-  color: cc(txt);
-  background-color: cc(bg);
 
   &.noscroll {
+    position: fixed;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
   }

@@ -1,27 +1,34 @@
-@mixin flex($_g, $_s, $_b) {
-	flex-grow: $_g;
-	flex-shrink: $_s;
-	flex-basis: $_b;
+// font-family helper
+@mixin type-font($family, $weight: normal, $style: normal, $type: sans-serif) {
+  font-family: #{$family}, #{$type};
+  font-weight: $weight;
+  font-style: $style;
 }
 
-@mixin clearfix {
-	&::after {
-		content: '';
-		display: block;
-		height: 0;
-		visibility: hidden;
-		clear: both;
-	}
+// type-settings helper
+@mixin type($name, $space: false) {
+  @if ($space) { @extend %type-#{$name}-#{$space}; }
+  @else { @extend %type-#{$name}; }
 }
 
-@mixin bgCover($_pos:center) {
+// background image cover
+@mixin bg-cover($pos: center) {
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: $_pos;
+	background-position: $pos;
 }
 
-@mixin longWordWrap {
-	overflow-wrap: break-word;
-	word-wrap: break-word;
-	word-break: break-word;
+@mixin abs-center($px: 50%, $py: 50%, $tx: -50%, $ty: -50%) {
+  position: absolute;
+  top: $py;
+  left: $px;
+  transform: translate3d(#{$tx}, #{$ty});
+}
+
+@mixin abs-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
