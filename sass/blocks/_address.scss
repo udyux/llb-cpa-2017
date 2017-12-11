@@ -1,0 +1,12 @@
+.address {
+  text-align: left;
+
+  &__name {
+    @include type(heading, alt);
+    text-transform: uppercase;
+  }
+
+  &__location {
+    @include type(heading, alt);
+  }
+}

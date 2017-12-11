@@ -1,0 +1,23 @@
+.contact {
+  background-color: cc(navy);
+
+  &__details {
+    padding: 0 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    width: calc(50% - 5rem);
+    max-width: 480px;
+  }
+
+  &__info {
+    @include type(body, alt);
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+  }
+}

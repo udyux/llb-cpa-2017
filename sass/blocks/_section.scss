@@ -1,5 +1,5 @@
 .section {
-  padding: 10rem 11.25rem 11.25rem;
+  padding: 10rem 11.25rem;
   text-align: center;
 
   &--accent {
@@ -33,7 +33,7 @@
     @include type(body, small);
     line-height: 1.8;
     width: calc(25% - 3rem);
-    margin: 0 1.5rem;
+    margin: 0 1.5rem 1.5rem;
   }
 
   &__subtitle {

@@ -4,4 +4,8 @@
   fill: currentColor;
   display: inline-block;
   text-decoration: inherit;
+
+  &--270 {
+    transform: rotate(270deg);
+  }
 }

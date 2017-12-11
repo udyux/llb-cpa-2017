@@ -22,6 +22,7 @@
 %type-body-alt {
   @extend %font-asap-400;
   font-size: 14px;
+  line-height: 1.6;
 }
 
 %type-body-rte {
@@ -70,6 +71,11 @@
   @extend %font-sans-700i;
   font-size: 26px;
   line-height: 1.2;
+}
+
+%type-heading-alt {
+  @extend %font-asap-700;
+  font-size: 14px;
 }
 
 %type-button {
