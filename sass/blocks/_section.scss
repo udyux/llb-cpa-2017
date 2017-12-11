@@ -1,3 +1,49 @@
 .section {
-  
+  padding: 10rem 11.25rem 11.25rem;
+  text-align: center;
+
+  &--accent {
+    background-color: cc(accent);
+  }
+
+  &--light {
+    background-color: white;
+    color: cc(grey, darker);
+  }
+
+  &__title {
+    @include type(subtitle);
+  }
+
+  &__text {
+    @include type(body, rte);
+    max-width: 42rem;
+    margin: 2.5rem auto;
+  }
+
+  &__row {
+    margin-top: 5.25rem;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    @include type(body, small);
+    line-height: 1.8;
+    width: calc(25% - 3rem);
+    margin: 0 1.5rem;
+  }
+
+  &__subtitle {
+    @include type(heading);
+    margin-bottom: 1rem;
+  }
+
+  &__graphic {
+    color: cc(grey, lighter);
+    font-size: 4rem;
+    text-align: center;
+  }
 }

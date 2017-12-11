@@ -4,6 +4,7 @@ const cssnano = require('cssnano')
 const uglify = require('gulp-uglify')
 const eslint = require('gulp-eslint')
 const rename = require('gulp-rename')
+const htmlmin = require('gulp-htmlmin')
 const postcss = require('gulp-postcss')
 const plumber = require('gulp-plumber')
 const babel = require('rollup-plugin-babel')
@@ -30,7 +31,7 @@ gulp.task('sass:dev', () => {
 			cssnano()
 		]))
 		.pipe(sourcemaps.write())
-		.pipe(rename({ dirname: '' }))
+		.pipe(rename({ dirname: '', suffix: '.min' }))
 		.pipe(gulp.dest(config.sass.dest))
 		.pipe(browserSync.stream({ match: '**/*.css' }))
 })
@@ -43,8 +44,8 @@ gulp.task('sass', () => {
 			autoprefixer(config.sass.autoprefixer),
 			cssnano()
 		]))
-		.pipe(rename({ dirname: '' }))
-		.pipe(gulp.dest(config.sass.dest))
+		.pipe(rename({ dirname: '', suffix: '.min' }))
+		.pipe(gulp.dest(config.build.sass))
 })
 
 // js
@@ -52,7 +53,7 @@ gulp.task('js:dev', () => {
 	return gulp.src(config.js.src)
 		.pipe(plumber(utils.jsReporter))
 		.pipe(sourcemaps.init())
-		.pipe(eslint())
+		.pipe(eslint(config.js.eslint))
 		.pipe(eslint.format())
 		.pipe(rollup({
 			plugins: [
@@ -61,8 +62,9 @@ gulp.task('js:dev', () => {
 				babel(config.js.babel)
 			]
 		}, 'iife'))
+		.pipe(uglify())
 		.pipe(sourcemaps.write())
-		.pipe(rename({ dirname: '' }))
+		.pipe(rename({ dirname: '', suffix: '.min' }))
 		.pipe(gulp.dest(config.js.dest))
 })
 
@@ -76,7 +78,8 @@ gulp.task('js', () => {
 			]
 		}, 'iife'))
 		.pipe(uglify())
-		.pipe(gulp.dest(config.js.dest))
+		.pipe(rename({ dirname: '', suffix: '.min' }))
+		.pipe(gulp.dest(config.build.js))
 })
 
 // watch
@@ -87,10 +90,14 @@ gulp.task('watch', ['sass:dev', 'js:dev'], () => {
 
 // browser sync
 gulp.task('dev', ['watch'], () => {
-	browserSync.init(utils.bsConfig)
+	browserSync.init(config.browserSync)
 	gulp.watch(`${config.js.dest}/*.js`).on('change', browserSync.reload)
 	gulp.watch(config.watch.markup).on('change', browserSync.reload)
 })
 
 // build
-gulp.task('build', ['sass', 'js'])
+gulp.task('build', ['sass', 'js'], () => {
+	return gulp.src(config.markup.src)
+		.pipe(htmlmin(config.markup.options))
+		.pipe(gulp.dest(config.build.dir))
+})

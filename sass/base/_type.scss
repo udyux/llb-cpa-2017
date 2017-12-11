@@ -15,7 +15,8 @@
 
 %type-body-small {
   @extend %font-serif-300;
-  font-size: 12px;
+  font-size: 13px;
+  line-height: 1.45;
 }
 
 %type-body-alt {
@@ -25,7 +26,7 @@
 
 %type-body-rte {
   @extend %type-body;
-  line-height: 1.6;
+  line-height: 2;
 }
 
 %type-title {
@@ -38,6 +39,7 @@
 %type-title-small {
   @extend %font-sans-300;
   font-size: 26px;
+  text-transform: uppercase;
 }
 
 %type-title-alt {
@@ -67,18 +69,21 @@
 %type-heading {
   @extend %font-sans-700i;
   font-size: 26px;
+  line-height: 1.2;
 }
 
 %type-button {
   @extend %font-asap-700;
   font-size: 12px;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 %type-button-link {
   @extend %font-asap-700;
-  font-size: 10px;
+  font-size: 11px;
   text-transform: uppercase;
+  letter-spacing: 0.125em;
 }
 
 %type-button-alt {

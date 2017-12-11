@@ -2,11 +2,15 @@
   "name": "llb-cpa-static",
   "version": "1.0.0",
   "description": "",
+  "author": "Nicolas Udy <dev@udy.io>",
+  "private": true,
   "scripts": {
     "dev": "gulp dev",
-    "build": "gulp build"
+    "build": "node -e 'require(\"./gulp.config.js\").copyAssets()' && gulp build"
   },
-  "author": "Nicolas Udy <dev@udy.io>",
+  "dependencies": {
+    "scroll": "^2.0.1"
+  },
   "devDependencies": {
     "ajv": "^5.3.0",
     "autoprefixer": "^7.1.2",
@@ -19,9 +23,12 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
+    "fs-extra": "^4.0.3",
     "gulp": "^3.9.1",
     "gulp-better-rollup": "^1.1.1",
+    "gulp-copy": "^1.0.1",
     "gulp-eslint": "^4.0.0",
+    "gulp-htmlmin": "^3.0.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^7.0.0",
     "gulp-rename": "^1.2.2",
@@ -31,16 +38,13 @@
     "log-symbols": "^2.0.0",
     "postcss-custom-media": "^6.0.0",
     "postcss-pxtorem": "^4.0.1",
+    "recursive-copy": "^2.0.7",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "^8.1.0",
     "rollup-plugin-node-resolve": "^3.0.0"
   },
-  "private": true,
   "engines": {
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
-  },
-  "dependencies": {
-    "scrollto-with-animation": "^4.5.2"
   }
 }

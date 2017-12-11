@@ -17,18 +17,3 @@
 	background-repeat: no-repeat;
 	background-position: $pos;
 }
-
-@mixin abs-center($px: 50%, $py: 50%, $tx: -50%, $ty: -50%) {
-  position: absolute;
-  top: $py;
-  left: $px;
-  transform: translate3d(#{$tx}, #{$ty});
-}
-
-@mixin abs-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}

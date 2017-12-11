@@ -1,10 +1,25 @@
+const path = require('path')
+const fs = require('fs-extra')
+const copy = require('recursive-copy')
+
 // config
 const config = {
-  browsersync: {
+  build: './dist',
+
+  server: {
     proxy: null,
     port: 8080,
     sync: true
   },
+
+	markup: {
+		src: '*.html',
+		options: {
+			collapseWhitespace: true,
+			conservativeCollapse: true,
+			collapseBooleanAttributes: true
+		}
+	},
 
   sass: {
 		src: ['./sass/*.scss'],
@@ -37,23 +52,34 @@ const chalk = require('chalk')
 
 module.exports = {
 	get config() {
-		config.sass.dest = config.sass.dest.replace(/\/$/, '')
-	  config.js.dest = config.js.dest.replace(/\/$/, '')
-		return config
-	},
+    const buildPath = path.resolve(__dirname, config.build)
 
-	get bsConfig() {
-		let conf = {
-			port: config.browsersync.port,
-			ui: { port: config.browsersync.port + 1 }
+    config.build = {
+      dir: buildPath,
+      js: path.resolve(buildPath, config.js.dest),
+      sass: path.resolve(buildPath, config.sass.dest)
+    }
+
+    config.js.dest = path.resolve(__dirname, config.js.dest)
+		config.sass.dest = path.resolve(__dirname, config.sass.dest)
+
+    Object.keys(config.watch).forEach(key => {
+      config.watch[key] = config.watch[key].replace(/^\.\//, '')
+    })
+
+    let bsConfig = {
+			port: config.server.port,
+			ui: { port: config.server.port + 1 }
 		}
 
-    if (!config.browsersync.sync) conf.ghostMode = false
+    if (!config.server.sync) bsConfig.ghostMode = false
 
-    if (config.browsersync.proxy) conf.proxy = config.browsersync.proxy
-    else conf.server = './'
+    if (config.server.proxy) bsConfig.proxy = config.server.proxy
+    else bsConfig.server = './'
 
-		return conf
+    config.browserSync = bsConfig
+
+		return config
 	},
 
 	sassReporter(e) {
@@ -67,5 +93,29 @@ module.exports = {
 	jsReporter(e) {
 		console.log(e)
 		this.emit('end')
-	}
+	},
+
+	copyAssets() {
+		const src = path.resolve(__dirname)
+		const dest = path.resolve(__dirname, config.build)
+
+		let opts = {
+			overwrite: true,
+			filter: [
+				config.markup.src,
+				'assets/**/*'
+			]
+		}
+
+		return fs.emptyDir(dest)
+			.then(() => copy(src, dest, opts))
+			.then(() => {
+				console.log('copy success')
+				process.exit(0)
+			})
+			.catch(err => {
+				console.log(err)
+				process.exit(1)
+			})
+	},
 }

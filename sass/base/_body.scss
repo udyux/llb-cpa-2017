@@ -1,7 +1,7 @@
 body {
   @include type(body);
   color: cc(white);
-  background-color: cc(white, darker);
+  background-color: cc(grey, darker);
   position: relative;
 
   &.noscroll {
