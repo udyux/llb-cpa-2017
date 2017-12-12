@@ -2,6 +2,7 @@
   padding: 5rem 11.25rem;
   display: flex;
   align-items: stretch;
+  background-color: cc(grey);
 
   &__section {
     padding: 0 3rem;
@@ -22,5 +23,20 @@
 
   &__link {
     display: block;
+
+    &--inline {
+      display: inline-block;
+      margin-left: 1.5rem;
+    }
+  }
+
+  &__legal {
+    @extend %font-asap-700;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  &__copy {
+    text-transform: uppercase;
   }
 }

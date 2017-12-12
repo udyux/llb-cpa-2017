@@ -1,12 +1,8 @@
 .contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: cc(navy);
-
-  &__details {
-    padding: 0 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
 
   &__logo {
     width: calc(50% - 5rem);

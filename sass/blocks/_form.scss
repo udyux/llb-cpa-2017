@@ -1,0 +1,43 @@
+.form {
+  @include bg-cover;
+  display: flex;
+  text-align: left;
+  background-image: url('/assets/media/jpg/form-background.jpg');
+
+  &__text {
+    position: relative;
+    width: 50%;
+    padding-right: 2.5rem;
+    font-size: 14px;
+    line-height: 1.6rem;
+  }
+
+  &__title {
+    @extend .landing__title;
+  }
+
+  &__subtitle {
+    @extend .landing__subtitle;
+    margin-bottom: 2.5rem;
+  }
+
+  &__body {
+    position: relative;
+    width: 50%;
+    padding-left: 10rem;
+    color: cc(primary);
+  }
+
+  &__input {
+    @include type(button);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    width: 100%;
+    margin-bottom: 1.25rem;
+
+    &--textarea {
+      height: 10rem;
+    }
+  }
+}

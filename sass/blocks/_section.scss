@@ -1,5 +1,5 @@
 .section {
-  padding: 10rem 11.25rem;
+  padding: 10rem;
   text-align: center;
 
   &--accent {
@@ -22,8 +22,7 @@
   }
 
   &__row {
-    margin-top: 5.25rem;
-    padding: 0 1.5rem;
+    margin-top: 5rem;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -32,8 +31,12 @@
   &__item {
     @include type(body, small);
     line-height: 1.8;
-    width: calc(25% - 3rem);
-    margin: 0 1.5rem 1.5rem;
+    width: calc(25% - 1.875rem);
+    margin-bottom: 1.25rem;
+
+    &+& {
+      margin-left: 2.5rem;
+    }
   }
 
   &__subtitle {

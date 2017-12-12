@@ -1,22 +1,11 @@
 .billboard {
   @include bg-cover;
-  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-image: url('/assets/media/jpg/cta-background.jpg');
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(black, 0.6);
-  }
 
   > * {
     position: relative;
