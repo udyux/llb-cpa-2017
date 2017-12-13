@@ -1,6 +1,14 @@
 .section {
-  padding: 10rem;
+  padding: 2.5rem 1.25rem;
   text-align: center;
+
+  @media (--tablet) {
+    padding: 5rem;
+  }
+
+  @media (--laptop) {
+    padding: 10rem;
+  }
 
   &--accent {
     background-color: cc(accent);
@@ -22,20 +30,31 @@
   }
 
   &__row {
-    margin-top: 5rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    margin-top: 2.5rem;
+
+    @media (--tablet) {
+      margin-top: 5rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
   }
 
   &__item {
     @include type(body, small);
     line-height: 1.8;
-    width: calc(25% - 1.875rem);
     margin-bottom: 1.25rem;
 
-    &+& {
-      margin-left: 2.5rem;
+    @media (--tablet) {
+      width: calc(50% - 1.875rem);
+
+      &+& {
+        margin-left: 2.5rem;
+      }
+    }
+
+    @media (--laptop) {
+      width: calc(25% - 1.875rem);
     }
   }
 

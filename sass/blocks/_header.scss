@@ -3,7 +3,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  padding: 2rem 2.5rem 1rem;
+  padding: 1.25rem 1.25rem 0.75rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,15 +11,24 @@
   transition: background-color 225ms cb();
   z-index: 1;
 
+  @media (--tablet) {
+    padding: 2rem 2.5rem 1rem;
+  }
+
   &::before,
   &::after {
     content: '';
     position: absolute;
     top: 100%;
-    left: 2.5rem;
-    width: calc(100% - 5rem);
+    left: 1.25rem;
+    width: calc(100% - 2.5rem);
     height: 1px;
     background-color: cc(primary);
+
+    @media (--tablet) {
+      left: 2.5rem;
+      width: calc(100% - 5rem);
+    }
   }
 
   &::after {
@@ -44,21 +53,42 @@
   }
 
   &__details {
-    @include type(body, small);
+    @extend %font-serif-300;
+    font-size: 10px;
+    line-height: 1.25;
     display: flex;
     align-items: flex-start;
+    white-space: nowrap;
+
+    @media (--tablet) {
+      font-size: 13px;
+      line-height: 1.45;
+    }
   }
 
   &__logo {
     display: inline-block;
-    width: 400px;
-    margin-right: 2.5rem;
+    width: 220px;
+    margin-right: 1.25rem;
+
+    @media (--tablet) {
+      width: 300px;
+      margin-right: 2.5rem;
+    }
+
+    @media (--laptop) {
+      width: 400px;
+    }
   }
 
   &__nav {
-    padding-bottom: 1rem;
-    display: flex;
-    align-items: center;
+    display: none;
+
+    @media (--laptop) {
+      padding-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__link {

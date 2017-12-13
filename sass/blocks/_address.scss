@@ -1,5 +1,10 @@
 .address {
-  text-align: left;
+  margin-bottom: 1.25rem;
+
+  @media (--tablet) {
+    margin-bottom: 0;
+    text-align: left;
+  }
 
   &__name {
     @include type(heading, alt);

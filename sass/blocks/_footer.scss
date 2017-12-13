@@ -1,24 +1,47 @@
 .footer {
-  padding: 5rem 10rem;
+  padding: 1.25rem 2.5rem;
+  background-color: cc(grey);
   display: flex;
   align-items: stretch;
-  background-color: cc(grey);
+
+  @media (--tablet) {
+
+    padding: 2.5rem 5rem;
+  }
+
+  @media (--desktop) {
+    padding: 5rem 10rem;
+  }
 
   &__section {
-    padding: 0 2.5rem;
+    display: none;
     min-width: 25%;
 
+    @media (--tablet) {
+      display: block;
+      padding: 0 2.5rem;
+    }
+
     &+& {
+      display: block;
       flex-grow: 1;
-      margin-left: 2.5rem;
+
+      @media (--tablet) {
+        margin-left: 2.5rem;
+      }
     }
   }
 
   &__nav {
     @include type(button, link);
-    margin-bottom: 6.5rem;
+    margin-bottom: 3.75rem;
     text-transform: uppercase;
-    line-height: 1.8;
+    line-height: 2.2;
+
+    @media (--tablet) {
+      margin-bottom: 6.5rem;
+      line-height: 1.8;
+    }
   }
 
   &__link {
