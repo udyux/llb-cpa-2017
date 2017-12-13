@@ -1,3 +1,5 @@
+$slider-duration: 7.5s;
+
 .header {
   width: 100%;
   position: fixed;
@@ -15,9 +17,7 @@
     padding: 2rem 2.5rem 1rem;
   }
 
-  &::before,
-  &::after {
-    content: '';
+  &__timer {
     position: absolute;
     top: 100%;
     left: 1.25rem;
@@ -29,18 +29,24 @@
       left: 2.5rem;
       width: calc(100% - 5rem);
     }
-  }
 
-  &::after {
-    box-shadow: 0 1px 0 cc(primary), 0 -1px 0 cc(primary);
-    transform: scaleX(0);
-    transform-origin: 0 50%;
-    transition: transform 50ms linear, opacity 225ms cb();
-  }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: cc(primary);
+      box-shadow: 0 1px 0 cc(primary), 0 -1px 0 cc(primary);
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+    }
 
-  &--timer::after {
-    transform: scaleX(1);
-    transition: transform 6.5s linear, opacity 225ms cb();
+    &.running::after {
+      transform: scaleX(1);
+      transition: transform #{$slider-duration} linear, opacity 225ms cb();
+    }
   }
 
   &--docked {
