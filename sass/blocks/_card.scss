@@ -1,0 +1,43 @@
+.card {
+  position: relative;
+  perspective: 100vw;
+
+  &__front {
+    position: relative;
+    opacity: 1;
+    transform: rotateY(0);
+    transform-style: preserve-3d;
+    transition: all 325ms cb();
+
+    .card--flip & {
+      opacity: 0;
+      transform: rotateY(135deg);
+      pointer-events: none;
+    }
+  }
+
+  &__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: rotateY(-135deg);
+    transform-style: preserve-3d;
+    transition: all 325ms cb();
+    pointer-events: none;
+
+    .card--flip & {
+      opacity: 1;
+      transform: rotateY(0);
+      pointer-events: auto;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+}

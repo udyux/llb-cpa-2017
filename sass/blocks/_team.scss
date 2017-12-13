@@ -23,12 +23,19 @@
     margin-bottom: 0.75rem;
   }
 
+  &__details {
+    margin-bottom: 0.75rem;
+    padding-right: 1.25rem;
+  }
+
   &__button {
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     &--label {
       @include type(button, alt);
+      cursor: pointer;
     }
   }
 }

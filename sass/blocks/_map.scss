@@ -1,0 +1,14 @@
+.map {
+  position: relative;
+
+  &__title {
+    @include type(heading, map);
+    padding: 0.75rem;
+    background-color: cc(navy, darker);
+    text-align: center;
+  }
+
+  &__container {
+    height: 550px;
+  }
+}

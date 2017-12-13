@@ -1,16 +1,16 @@
 .footer {
-  padding: 5rem 11.25rem;
+  padding: 5rem 10rem;
   display: flex;
   align-items: stretch;
   background-color: cc(grey);
 
   &__section {
-    padding: 0 3rem;
+    padding: 0 2.5rem;
     min-width: 25%;
 
     &+& {
       flex-grow: 1;
-      margin-left: 3rem;
+      margin-left: 2.5rem;
     }
   }
 
@@ -18,22 +18,48 @@
     @include type(button, link);
     margin-bottom: 6.5rem;
     text-transform: uppercase;
-    line-height: 1.6;
+    line-height: 1.8;
   }
 
   &__link {
     display: block;
-
-    &--inline {
-      display: inline-block;
-      margin-left: 1.5rem;
-    }
   }
 
   &__legal {
+    display: inline-block;
+    margin-left: 1.5rem;
+  }
+
+  &__content {
     @extend %font-asap-700;
+    position: relative;
     font-size: 12px;
     line-height: 1.6;
+  }
+
+  &__social {
+    @extend %font-asap-700;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  &__outline {
+    width: 220px;
+  }
+
+  &__icon {
+    display: inline-block;
+    position: absolute;
+    top: 55%;
+    right: 1rem;
+    transform: translate3d(0, -50%, 0);
+    font-size: 1.25rem;
   }
 
   &__copy {

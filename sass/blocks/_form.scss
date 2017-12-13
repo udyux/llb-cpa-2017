@@ -29,7 +29,7 @@
   }
 
   &__input {
-    @include type(button);
+    @include type(button, input);
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
     background-color: white;

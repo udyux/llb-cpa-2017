@@ -22,7 +22,7 @@
 %type-body-alt {
   @extend %font-asap-400;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 %type-body-rte {
@@ -78,10 +78,23 @@
   font-size: 14px;
 }
 
+%type-heading-map {
+  @extend %font-asap-700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
 %type-button {
   @extend %font-asap-700;
   font-size: 12px;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+%type-button-input {
+  @extend %font-asap-700;
+  font-size: 12px;
   letter-spacing: 0.1em;
 }
 

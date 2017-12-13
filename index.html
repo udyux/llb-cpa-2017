@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Asap:400,700|Merriweather:300i,900i|Source+Sans+Pro:300,700,700i">
 </head>
 <body>
-  <header class="header">
+  <header class="header" data-header>
     <figure class="header__details">
       <a href="/"><img class="header__logo" src="/assets/media/png/logo-partial--white.png" alt="Laberge Lafleur Brown S.E.N.C.R.L"/></a>
       <figcaption>Société de comptables<br/>professionnels agréés</figcaption>
@@ -144,70 +144,166 @@
     </section>
 
     <section id="team" class="team">
-      <article class="team__card">
-        <img src="/assets/media/jpg/team-member.jpg"/>
-        <h5 class="team__member">Jean Brown</h5>
-        <h6 class="team__title">CPA auditeur, CA Associé</h6>
+      <article class="team__card card" data-card>
+        <aside class="card__front">
+          <img src="/assets/media/jpg/team-member.jpg"/>
+          <h5 class="team__member">Jean Brown</h5>
+          <h6 class="team__title">CPA auditeur, CA Associé</h6>
 
-        <button class="team__button">
-          <svg class="icon icon--270"><use xlink:href="#caret"/></svg>
-          <label class="team__button--label">Voir le profil</label>
-        </button>
+          <button class="team__button" data-card-flip>
+            <svg class="icon icon--270"><use xlink:href="#caret"/></svg>
+            <label class="team__button--label">Voir le profil</label>
+          </button>
+        </aside>
+
+        <aside class="card__back">
+          <h5 class="team__member">Jean Brown</h5>
+          <h6 class="team__title">CPA auditeur, CA Associé</h6>
+
+          <p class="team__details">Il oeuvre dans le domaine de la certification et de la consultation depuis 1981. Il dirige des mandats d'audit tant dans le secteur public que dans le secteur privé et s'occupe de divers projets spéciaux relevant de l'expertise comptable. Il est également spécialisé dans l'évaluation du contrôle interne de systèmes comptables informatisés. Il était antérieurement à l'emploi de PricewaterhouseCoopers (PwC) cabinet de comptables professionnels agréés d'envergure internationale à titre d'adjoint aux associés.</p>
+
+          <button class="team__button" data-card-unflip>
+            <svg class="icon icon--270"><use xlink:href="#caret"/></svg>
+            <label class="team__button--label">Fermer le profil</label>
+          </button>
+
+          <svg class="icon card__close" data-card-unflip><use xlink:href="#close"/></svg>
+        </aside>
       </article>
 
-      <article class="team__card">
-        <img src="/assets/media/jpg/team-member.jpg"/>
-        <h5 class="team__member">Charles Rioux</h5>
-        <h6 class="team__title">CPA auditeur, CGA Associé</h6>
+      <article class="team__card card" data-card>
+        <aside class="card__front">
+          <img src="/assets/media/jpg/team-member.jpg"/>
+          <h5 class="team__member">Charles Rioux</h5>
+          <h6 class="team__title">CPA auditeur, CGA Associé</h6>
 
-        <button class="team__button">
-          <svg class="icon icon--270"><use xlink:href="#caret"/></svg>
-          <label class="team__button--label">Voir le profil</label>
-        </button>
+          <button class="team__button" data-card-flip>
+            <svg class="icon icon--270"><use xlink:href="#caret"/></svg>
+            <label class="team__button--label">Voir le profil</label>
+          </button>
+        </aside>
+
+        <aside class="card__back">
+          <h5 class="team__member">Charles Rioux</h5>
+          <h6 class="team__title">CPA auditeur, CGA Associé</h6>
+
+          <p class="team__details">Il oeuvre dans le domaine de la certification et de la consultation depuis 1981. Il dirige des mandats d'audit tant dans le secteur public que dans le secteur privé et s'occupe de divers projets spéciaux relevant de l'expertise comptable. Il est également spécialisé dans l'évaluation du contrôle interne de systèmes comptables informatisés. Il était antérieurement à l'emploi de PricewaterhouseCoopers (PwC) cabinet de comptables professionnels agréés d'envergure internationale à titre d'adjoint aux associés.</p>
+
+          <button class="team__button" data-card-unflip>
+            <svg class="icon icon--270"><use xlink:href="#caret"/></svg>
+            <label class="team__button--label">Fermer le profil</label>
+          </button>
+
+          <svg class="icon card__close" data-card-unflip><use xlink:href="#close"/></svg>
+        </aside>
       </article>
 
-      <article class="team__card">
-        <img src="/assets/media/jpg/team-member.jpg"/>
-        <h5 class="team__member">Luc Trudel</h5>
-        <h6 class="team__title">CPA auditeur, CA Associé</h6>
+      <article class="team__card card" data-card>
+        <aside class="card__front">
+          <img src="/assets/media/jpg/team-member.jpg"/>
+          <h5 class="team__member">Luc Trudel</h5>
+          <h6 class="team__title">CPA auditeur, CA Associé</h6>
 
-        <button class="team__button">
-          <svg class="icon icon--270"><use xlink:href="#caret"/></svg>
-          <label class="team__button--label">Voir le profil</label>
-        </button>
+          <button class="team__button" data-card-flip>
+            <svg class="icon icon--270"><use xlink:href="#caret"/></svg>
+            <label class="team__button--label">Voir le profil</label>
+          </button>
+        </aside>
+
+        <aside class="card__back">
+          <h5 class="team__member">Luc Trudel</h5>
+          <h6 class="team__title">CPA auditeur, CA Associé</h6>
+
+          <p class="team__details">Il oeuvre dans le domaine de la certification et de la consultation depuis 1981. Il dirige des mandats d'audit tant dans le secteur public que dans le secteur privé et s'occupe de divers projets spéciaux relevant de l'expertise comptable. Il est également spécialisé dans l'évaluation du contrôle interne de systèmes comptables informatisés. Il était antérieurement à l'emploi de PricewaterhouseCoopers (PwC) cabinet de comptables professionnels agréés d'envergure internationale à titre d'adjoint aux associés.</p>
+
+          <button class="team__button" data-card-unflip>
+            <svg class="icon icon--270"><use xlink:href="#caret"/></svg>
+            <label class="team__button--label">Fermer le profil</label>
+          </button>
+
+          <svg class="icon card__close" data-card-unflip><use xlink:href="#close"/></svg>
+        </aside>
       </article>
 
-      <article class="team__card">
-        <img src="/assets/media/jpg/team-member.jpg"/>
-        <h5 class="team__member">Andrée Lortie</h5>
-        <h6 class="team__title">CPA auditeur, CA Directrice</h6>
+      <article class="team__card card" data-card>
+        <aside class="card__front">
+          <img src="/assets/media/jpg/team-member.jpg"/>
+          <h5 class="team__member">Andrée Lortie</h5>
+          <h6 class="team__title">CPA auditeur, CA Directrice</h6>
 
-        <button class="team__button">
-          <svg class="icon icon--270"><use xlink:href="#caret"/></svg>
-          <label class="team__button--label">Voir le profil</label>
-        </button>
+          <button class="team__button" data-card-flip>
+            <svg class="icon icon--270"><use xlink:href="#caret"/></svg>
+            <label class="team__button--label">Voir le profil</label>
+          </button>
+        </aside>
+
+        <aside class="card__back">
+          <h5 class="team__member">Andrée Lortie</h5>
+          <h6 class="team__title">CPA auditeur, CA Directrice</h6>
+
+          <p class="team__details">Il oeuvre dans le domaine de la certification et de la consultation depuis 1981. Il dirige des mandats d'audit tant dans le secteur public que dans le secteur privé et s'occupe de divers projets spéciaux relevant de l'expertise comptable. Il est également spécialisé dans l'évaluation du contrôle interne de systèmes comptables informatisés. Il était antérieurement à l'emploi de PricewaterhouseCoopers (PwC) cabinet de comptables professionnels agréés d'envergure internationale à titre d'adjoint aux associés.</p>
+
+          <button class="team__button" data-card-unflip>
+            <svg class="icon icon--270"><use xlink:href="#caret"/></svg>
+            <label class="team__button--label">Fermer le profil</label>
+          </button>
+
+          <svg class="icon card__close" data-card-unflip><use xlink:href="#close"/></svg>
+        </aside>
       </article>
 
-      <article class="team__card">
-        <img src="/assets/media/jpg/team-member.jpg"/>
-        <h5 class="team__member">Nancy Huppé</h5>
-        <h6 class="team__title">CPA auditeur, CA Directrice</h6>
+      <article class="team__card card" data-card>
+        <aside class="card__front">
+          <img src="/assets/media/jpg/team-member.jpg"/>
+          <h5 class="team__member">Nancy Huppé</h5>
+          <h6 class="team__title">CPA auditeur, CA Directrice</h6>
 
-        <button class="team__button">
-          <svg class="icon icon--270"><use xlink:href="#caret"/></svg>
-          <label class="team__button--label">Voir le profil</label>
-        </button>
+          <button class="team__button" data-card-flip>
+            <svg class="icon icon--270"><use xlink:href="#caret"/></svg>
+            <label class="team__button--label">Voir le profil</label>
+          </button>
+        </aside>
+
+        <aside class="card__back">
+          <h5 class="team__member">Nancy Huppé</h5>
+          <h6 class="team__title">CPA auditeur, CA Directrice</h6>
+
+          <p class="team__details">Il oeuvre dans le domaine de la certification et de la consultation depuis 1981. Il dirige des mandats d'audit tant dans le secteur public que dans le secteur privé et s'occupe de divers projets spéciaux relevant de l'expertise comptable. Il est également spécialisé dans l'évaluation du contrôle interne de systèmes comptables informatisés. Il était antérieurement à l'emploi de PricewaterhouseCoopers (PwC) cabinet de comptables professionnels agréés d'envergure internationale à titre d'adjoint aux associés.</p>
+
+          <button class="team__button" data-card-unflip>
+            <svg class="icon icon--270"><use xlink:href="#caret"/></svg>
+            <label class="team__button--label">Fermer le profil</label>
+          </button>
+
+          <svg class="icon card__close" data-card-unflip><use xlink:href="#close"/></svg>
+        </aside>
       </article>
 
-      <article class="team__card">
-        <img src="/assets/media/jpg/team-member.jpg"/>
-        <h5 class="team__member">Alain Labrie</h5>
-        <h6 class="team__title">CPA auditeur, CA Directeur</h6>
+      <article class="team__card card" data-card>
+        <aside class="card__front">
+          <img src="/assets/media/jpg/team-member.jpg"/>
+          <h5 class="team__member">Alain Labrie</h5>
+          <h6 class="team__title">CPA auditeur, CA Directeur</h6>
 
-        <button class="team__button">
-          <svg class="icon icon--270"><use xlink:href="#caret"/></svg>
-          <label class="team__button--label">Voir le profil</label>
-        </button>
+          <button class="team__button" data-card-flip>
+            <svg class="icon icon--270"><use xlink:href="#caret"/></svg>
+            <label class="team__button--label">Voir le profil</label>
+          </button>
+        </aside>
+
+        <aside class="card__back">
+          <h5 class="team__member">Alain Labrie</h5>
+          <h6 class="team__title">CPA auditeur, CA Directeur</h6>
+
+          <p class="team__details">Il oeuvre dans le domaine de la certification et de la consultation depuis 1981. Il dirige des mandats d'audit tant dans le secteur public que dans le secteur privé et s'occupe de divers projets spéciaux relevant de l'expertise comptable. Il est également spécialisé dans l'évaluation du contrôle interne de systèmes comptables informatisés. Il était antérieurement à l'emploi de PricewaterhouseCoopers (PwC) cabinet de comptables professionnels agréés d'envergure internationale à titre d'adjoint aux associés.</p>
+
+          <button class="team__button" data-card-unflip>
+            <svg class="icon icon--270"><use xlink:href="#caret"/></svg>
+            <label class="team__button--label">Fermer le profil</label>
+          </button>
+
+          <svg class="icon card__close" data-card-unflip><use xlink:href="#close"/></svg>
+        </aside>
       </article>
     </section>
 
@@ -219,10 +315,10 @@
       </aside>
 
       <form class="form__body" data-contact-form>
-        <input class="form__input" type="text" placeholder="prénom"/>
-        <input class="form__input" type="text" placeholder="nom"/>
-        <input class="form__input" type="email" placeholder="courriel"/>
-        <textarea class="form__input form__input--textarea" placeholder="message"></textarea>
+        <input class="form__input" type="text" placeholder="PRÉNOM" data-field="Prénom"/>
+        <input class="form__input" type="text" placeholder="NOM" data-field="Nom"/>
+        <input class="form__input" type="email" placeholder="COURRIEL" data-field="Courriel"/>
+        <textarea class="form__input form__input--textarea" placeholder="MESSAGE" data-field="Message"></textarea>
         <button class="button">envoyer</button>
       </form>
     </section>
@@ -243,6 +339,11 @@
         </ul>
       </div>
     </section>
+
+    <section class="map">
+      <h3 class="map__title">Localisation</h3>
+      <div class="map__container" id="map"></div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -252,6 +353,20 @@
         <a class="footer__link" href="#">À propos</a>
         <a class="footer__link" href="#">Comités</a>
       </nav>
+
+      <div class="footer__content">
+        <svg class="footer__outline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 217.5 68.5">
+          <path stroke="#b9924c" stroke-width="3" stroke-linejoin="round" fill="none" d="M1.750,2.164 L214.500,2.164 L214.500,45.331 C214.500,45.331 50.373,45.331 14.207,45.331 C6.456,45.331 1.750,64.602 1.750,64.602 L1.750,2.164 Z"/>
+        </svg>
+
+        <h6 class="footer__social">
+          <span>Suivez-nous sur<br/>les réseaux sociaux</span>
+
+          <a href="https://facebook.com" class="footer__icon">
+            <svg class="icon"><use xlink:href="#facebook"/></svg>
+          </a>
+        </h6>
+      </div>
     </div>
 
     <div class="footer__section">
@@ -260,6 +375,11 @@
         <a class="footer__link" href="#">procédures et règlements</a>
         <a class="footer__link" href="#">déposer une candidature</a>
       </nav>
+
+      <h6 class="footer__content">
+        <p class="footer__copy">Copyright &copy; 2017<a class="footer__legal" href="#">Légal</a></p>
+        <p>Tous droits réservés. L’utilisation de ce site signifie que vous consentez aux modalités d’utilisation de la présente entente</p>
+      </h6>
     </div>
   </footer>
 

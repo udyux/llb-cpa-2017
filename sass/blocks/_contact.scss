@@ -12,6 +12,7 @@
   &__info {
     @include type(body, alt);
     width: 50%;
+    padding-top: 0.5rem;
     display: flex;
     justify-content: space-between;
     text-align: right;

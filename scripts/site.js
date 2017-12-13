@@ -1,2 +1,5 @@
 import './modules/icon-sprite'
-import'./modules/scroll-to'
+import './modules/scroll-to'
+import './modules/dock-header'
+import './modules/card-flip'
+import './modules/google-map'

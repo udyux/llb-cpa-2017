@@ -1,6 +1,7 @@
 {
-  "env": { "browser": true },
   "extends": "standard",
+  "env": { "browser": true },
+  "globals": { "google": false },
   "rules": {
     "space-before-function-paren": 0,
     "object-property-newline": 0,

@@ -1,13 +1,14 @@
 .header {
-  width: calc(100% - 5rem);
-  position: absolute;
+  width: 100%;
+  position: fixed;
   top: 0;
-  left: 2.5rem;
-  padding: 2rem 0 1rem;
+  left: 0;
+  padding: 2rem 2.5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid cc(primary, 0.8);
+  background-color: cc(black, 0);
+  transition: background-color 225ms cb();
   z-index: 1;
 
   &::before,
@@ -15,8 +16,8 @@
     content: '';
     position: absolute;
     top: 100%;
-    left: 0;
-    width: 100%;
+    left: 2.5rem;
+    width: calc(100% - 5rem);
     height: 1px;
     background-color: cc(primary);
   }
@@ -25,12 +26,21 @@
     box-shadow: 0 1px 0 cc(primary), 0 -1px 0 cc(primary);
     transform: scaleX(0);
     transform-origin: 0 50%;
-    transition: transform 50ms linear;
+    transition: transform 50ms linear, opacity 225ms cb();
   }
 
   &--timer::after {
     transform: scaleX(1);
-    transition: transform 6.5s linear;
+    transition: transform 6.5s linear, opacity 225ms cb();
+  }
+
+  &--docked {
+    background-color: cc(black, .9);
+
+    &::before,
+    &::after {
+      opacity: 0;
+    }
   }
 
   &__details {
@@ -88,6 +98,10 @@
       border: 2px solid currentColor;
       border-radius: 100%;
 
+      &::after {
+        display: none;
+      }
+
       .icon {
         position: absolute;
         top: 50%;
@@ -95,9 +109,5 @@
         transform: translate3d(-50%, -50%, 0);
       }
     }
-  }
-
-  address {
-    @include type(body, alt);
   }
 }
