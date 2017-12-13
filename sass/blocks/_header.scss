@@ -1,4 +1,4 @@
-$slider-duration: 7.5s;
+$slider-duration: 4.5s;
 
 .header {
   width: 100%;
@@ -15,6 +15,10 @@ $slider-duration: 7.5s;
 
   @media (--tablet) {
     padding: 2rem 2.5rem 1rem;
+  }
+
+  &--docked {
+    background-color: cc(black, .9);
   }
 
   &__timer {
@@ -47,13 +51,8 @@ $slider-duration: 7.5s;
       transform: scaleX(1);
       transition: transform #{$slider-duration} linear, opacity 225ms cb();
     }
-  }
 
-  &--docked {
-    background-color: cc(black, .9);
-
-    &::before,
-    &::after {
+    .header--docked & {
       opacity: 0;
     }
   }
