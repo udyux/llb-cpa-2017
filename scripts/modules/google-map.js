@@ -1,5 +1,6 @@
 import fetch from './fetch'
 
+const mapNode = document.getElementById('map')
 const getScriptTag = (key) => {
   let tag = document.createElement('script')
   tag.setAttribute('async', '')
@@ -8,19 +9,21 @@ const getScriptTag = (key) => {
   return tag
 }
 
-fetch('/assets/data/map-config.json')
-  .then(config => {
-    let { key, options, marker: position } = JSON.parse(config)
+if (mapNode) {
+  fetch('/assets/data/map-config.json')
+    .then(config => {
+      let { key, options, marker: position } = JSON.parse(config)
 
-    const init = {
-      map: () => new google.maps.Map(document.getElementById('map'), options),
-      marker: (map) => new google.maps.Marker({ position, map })
-    }
+      const init = {
+        map: () => new google.maps.Map(mapNode, options),
+        marker: (map) => new google.maps.Marker({ position, map })
+      }
 
-    window.initMap = () => {
-      init.marker(init.map())
-    }
+      window.initMap = () => {
+        init.marker(init.map())
+      }
 
-    document.body.appendChild(getScriptTag(key))
-  })
-  .catch(err => console.log(err))
+      document.body.appendChild(getScriptTag(key))
+    })
+    .catch(err => console.log(err))
+}
