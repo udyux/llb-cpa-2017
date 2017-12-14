@@ -38,6 +38,11 @@
       justify-content: center;
       flex-wrap: wrap;
     }
+
+    @media (--desktop) {
+      max-width: 70rem;
+      margin: 5rem auto 0;
+    }
   }
 
   &__item {
