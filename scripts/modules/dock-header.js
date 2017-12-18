@@ -6,8 +6,8 @@ let scroll, buffer, docked
 
 
 const update = () => {
-  let dock = scroll > 5 && !docked
-  let undock = scroll <= 5 && docked
+  let dock = scroll > 10 && !docked
+  let undock = scroll <= 10 && docked
 
   if (dock || undock) docked = header.classList.toggle('header--docked')
   buffer = false

@@ -1,6 +1,7 @@
 import fetch from './fetch'
 
 const mapNode = document.getElementById('map')
+
 const getScriptTag = (key) => {
   let tag = document.createElement('script')
   tag.setAttribute('async', '')

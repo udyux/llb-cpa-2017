@@ -1,7 +1,6 @@
 .form {
   @include bg-cover;
   text-align: left;
-  background-image: url('/assets/media/jpg/form-background.jpg');
 
   @media (--tablet) {
     display: flex;
