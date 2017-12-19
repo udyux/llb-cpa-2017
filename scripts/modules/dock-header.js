@@ -1,9 +1,7 @@
 import dom from './dom-helpers'
 
-const page = document.documentElement
 const header = dom.find('[data-header]')
 let scroll, buffer, docked
-
 
 const update = () => {
   let dock = scroll > 10 && !docked
@@ -16,7 +14,7 @@ const update = () => {
 const requestUpdate = () => {
   if (!buffer) requestAnimationFrame(update)
   buffer = true
-  scroll = page.scrollTop
+  scroll = dom.scrollTop
 }
 
 window.addEventListener('scroll', requestUpdate)

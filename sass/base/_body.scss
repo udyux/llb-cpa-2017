@@ -2,12 +2,15 @@ body {
   @include type(body);
   color: cc(white);
   background-color: cc(grey, darker);
-  position: relative;
 
   &.noscroll {
     position: fixed;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+  }
+
+  bdo {
+    white-space: nowrap;
   }
 }

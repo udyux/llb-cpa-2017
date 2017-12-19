@@ -1,8 +1,15 @@
-const find = (query, scope = document) =>
-  scope.querySelector(query)
+const scrollBox = document.scrollingElement || document.documentElement
 
-const findAll = (query, scope = document) =>
-  [...scope.querySelectorAll(query)]
+export default {
+  scrollBox,
 
+  find: (query, scope = document) =>
+    scope.querySelector(query),
 
-export default { find, findAll }
+  findAll: (query, scope = document) =>
+    [...scope.querySelectorAll(query)],
+
+  get scrollTop() {
+    return scrollBox.scrollTop
+  }
+}

@@ -73,4 +73,16 @@
     font-size: 4rem;
     text-align: center;
   }
+
+  &__button {
+    @include type(heading);
+    min-width: 200px;
+    padding: 0.25rem;
+    border: 3px solid currentColor;
+    border-radius: 0.5rem;
+
+    &+& {
+      margin-left: 2.5rem;
+    }
+  }
 }

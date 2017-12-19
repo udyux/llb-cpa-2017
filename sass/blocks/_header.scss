@@ -1,4 +1,4 @@
-$slider-duration: 4.5s;
+$slider-duration: 6.5s;
 
 .header {
   width: 100%;
@@ -50,7 +50,7 @@ $slider-duration: 4.5s;
 
     &.running::after {
       transform: scaleX(1);
-      transition: transform #{$slider-duration} linear, opacity 225ms cb();
+      transition: transform #{$slider-duration} cubic-bezier(0.75, 0.9, 0.9, 1), opacity 225ms cb();
     }
 
     .header--docked & {

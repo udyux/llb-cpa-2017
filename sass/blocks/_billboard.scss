@@ -1,13 +1,33 @@
 .billboard {
-  @include bg-cover;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  padding: 0;
+  // @include bg-cover;
+  // padding: 66vh 1.25rem 5rem;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
 
-  > * {
+  // > * {
+  //   position: relative;
+  // }
+
+  & + .section {
     position: relative;
+  }
+
+  &__image {
+    margin-bottom: -3px;
+  }
+
+  &__content {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    max-width: 42rem;
+    padding-bottom: 5rem;
+    transform: translate3d(-50%, 0, 0);
   }
 
   &__title {

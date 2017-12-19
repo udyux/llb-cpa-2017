@@ -17,7 +17,11 @@ if (mapNode) {
 
       const init = {
         map: () => new google.maps.Map(mapNode, options),
-        marker: (map) => new google.maps.Marker({ position, map })
+        marker: (map) => new google.maps.Marker({
+          position,
+          map,
+          icon: '/assets/media/logo/llb-map.png'
+        })
       }
 
       window.initMap = () => {
