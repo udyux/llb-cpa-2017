@@ -77,12 +77,18 @@
   &__button {
     @include type(heading);
     min-width: 200px;
+    margin: 0 auto;
     padding: 0.25rem;
     border: 3px solid currentColor;
     border-radius: 0.5rem;
 
     &+& {
-      margin-left: 2.5rem;
+      margin-top: 1.25rem;
+
+      @media (--tablet) {
+        margin: 0;
+        margin-left: 2.5rem;
+      }
     }
   }
 }

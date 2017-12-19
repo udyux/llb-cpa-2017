@@ -1,6 +1,10 @@
 .landing {
   position: relative;
-  height: 100vh;
+  height: 80vh;
+
+  @media (--desktop) {
+    height: 100vh;
+  }
 
   &__slide {
     @include bg-cover;

@@ -3,7 +3,7 @@
 
   @media (--tablet) {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
 
@@ -13,14 +13,14 @@
 
     @media (--tablet) {
       width: calc(50% - 5rem);
-      max-width: 480px;
+      max-width: 35rem;
       margin: 0;
     }
   }
 
   &__info {
     @include type(body, alt);
-
+    margin-left: 10rem;
     padding-top: 2.5rem;
 
     @media (--tablet) {
@@ -30,11 +30,13 @@
       padding-top: 0.5rem;
       width: 50%;
     }
+
+    @media (--desktop) {
+      max-width: 35rem;
+    }
   }
 
   &__block {
-    // display: block;
-
     @media (--tablet) {
       display: inline;
     }

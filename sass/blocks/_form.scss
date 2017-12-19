@@ -14,6 +14,7 @@
 
   @media (--tablet) {
     display: flex;
+    justify-content: center;
   }
 
   &__text {
@@ -25,6 +26,10 @@
     @media (--tablet) {
       width: 50%;
       margin-bottom: 0;
+    }
+
+    @media (--desktop) {
+      max-width: 35rem;
     }
   }
 
@@ -47,6 +52,11 @@
 
     @media (--laptop) {
       padding-left: 10rem;
+    }
+
+    @media (--desktop) {
+      max-width: 35rem;
+      margin-left: 9rem;
     }
   }
 

@@ -11,9 +11,9 @@
   }
 
   &__row {
-    display: flex;
-
     @media (--tablet) {
+      display: flex;
+      justify-content: center;
       margin-bottom: 6.5rem;
 
       &+& {
@@ -23,11 +23,18 @@
   }
 
   &__item {
-    min-width: 25%;
+    @media (--tablet) {
+      min-width: 25%;
+      max-width: 35rem;
 
-    &+& {
-      flex-grow: 1;
-      margin-left: 2.5rem;
+      &+& {
+        flex-grow: 1;
+        margin-left: 2.5rem;
+
+        @media (--desktop) {
+          margin-left: 10rem;
+        }
+      }
     }
 
     &--content {
@@ -42,7 +49,6 @@
     @include type(button, link);
     display: block;
     line-height: 1.8;
-    // text-transform: uppercase;
   }
 
   &__legal {
@@ -52,18 +58,24 @@
 
   &__social {
     @extend %font-asap-700;
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 230px;
     max-width: 100%;
     height: 3rem;
+    margin: 2.5rem 0;
     padding: 0.75rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
     line-height: 1.4;
+
+    @media (--tablet) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+    }
   }
 
   &__outline {
