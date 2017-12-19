@@ -17,4 +17,5 @@ const requestUpdate = () => {
   scroll = dom.scrollTop
 }
 
+requestUpdate()
 window.addEventListener('scroll', requestUpdate)

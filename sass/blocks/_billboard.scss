@@ -1,16 +1,6 @@
 .billboard {
   position: relative;
   padding: 0;
-  // @include bg-cover;
-  // padding: 66vh 1.25rem 5rem;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-
-  // > * {
-  //   position: relative;
-  // }
 
   & + .section {
     position: relative;
