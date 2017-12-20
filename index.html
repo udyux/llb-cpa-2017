@@ -28,13 +28,15 @@
       <a class="header__link" href="#form" data-scroll-to>carrière</a>
       <a class="header__link" href="#contact" data-scroll-to>contactez-nous</a>
 
-      <a class="header__link header__link--social" href="https://www.facebook.com/labergelafleurbrown" target="_blank" >
-        <svg class="icon"><use xlink:href="#facebook"/></svg>
-      </a>
+      <span class="header__social">
+        <a class="header__link header__link--social" href="https://www.facebook.com/labergelafleurbrown" target="_blank" >
+          <svg class="icon"><use xlink:href="#facebook"/></svg>
+        </a>
 
-      <a class="header__link header__link--social" href="https://www.linkedin.com/company/11328552" target="_blank" >
-        <svg class="icon"><use xlink:href="#linkedin"/></svg>
-      </a>
+        <a class="header__link header__link--social" href="https://www.linkedin.com/company/11328552" target="_blank" >
+          <svg class="icon"><use xlink:href="#linkedin"/></svg>
+        </a>
+      </span>
     </nav>
 
     <div class="header__timer" data-timer></div>
@@ -47,7 +49,7 @@
         <hgroup class="landing__content">
           <h1 class="landing__title">Une équipe experte et engagée</h1>
           <h2 class="landing__subtitle">misant sur la colla­boration</h2>
-          <a class="button landing__cta" href="#approach" data-scroll-to>En savoir plus</a>
+          <a class="button landing__cta" href="#approach" data-label="En savoir plus" data-scroll-to></a>
         </hgroup>
       </article>
 
@@ -55,7 +57,7 @@
         <hgroup class="landing__content">
           <h1 class="landing__title">Conseils &amp; accompagnement</h1>
           <h2 class="landing__subtitle">Afin de maximiser vos résultats</h2>
-          <a class="button landing__cta" href="#approach" data-scroll-to>En savoir plus</a>
+          <a class="button landing__cta" href="#approach" data-label="En savoir plus" data-scroll-to></a>
         </hgroup>
       </article>
 
@@ -166,7 +168,7 @@
         <h3 class="billboard__title">des dirigeants & employés</h3>
         <h4 class="billboard__subtitle">digne de confiance</h4>
         <blockquote class="section__text">Ce qui caractérise et définit le cœur de notre entreprise est le degré de confiance mutuelle témoigné entre les dirigeants et les employés. La fierté et la rigueur que nous consacrons à notre travail ainsi que le fort esprit de collaboration entre collègues font de nous une entreprise d'excellence. Notre engagement de qualité et notre intégrité reposent sur l'expertise <bdo>de nos membres.</bdo></blockquote>
-        <a class="button billboard__cta" href="#members" data-scroll-to>Voir l'équipe</a>
+        <a class="button billboard__cta" href="#members" data-label="Voir l'équipe" data-scroll-to></a>
       </figcaption>
     </figure>
 
@@ -348,7 +350,7 @@
         <input class="form__input" type="text" placeholder="NOM" data-field="Nom"/>
         <input class="form__input" type="email" placeholder="COURRIEL" data-field="Courriel"/>
         <textarea class="form__input form__input--textarea" placeholder="MESSAGE" data-field="Message"></textarea>
-        <button class="button">envoyer</button>
+        <button class="button" data-label="envoyer"></button>
       </form>
     </section>
 

@@ -156,7 +156,7 @@ $slider-duration: 6.5s;
     }
 
     &+& {
-      margin-top: 1.5rem;
+      margin-top: 1rem;
 
       @media (--laptop) {
         margin-top: 0;
@@ -179,12 +179,25 @@ $slider-duration: 6.5s;
         display: none;
       }
 
+      &+& {
+        margin-left: 1.5rem;
+      }
+
       .icon {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate3d(-50%, -50%, 0);
       }
+    }
+  }
+
+  &__social {
+    margin-top: 2rem;
+
+    @media (--laptop) {
+      margin-top: 0;
+      margin-left: 1.5rem;
     }
   }
 

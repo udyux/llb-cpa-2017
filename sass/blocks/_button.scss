@@ -1,6 +1,39 @@
 .button {
   @include type(button);
+  position: relative;
+  display: inline-block;
   padding: 0.625rem 2rem;
   border: 3px solid currentColor;
   border-radius: 0.5rem;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: attr(data-label);
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    transition: transform 225ms cb();
+  }
+
+  &::before {
+    transform: translate3d(0, 0, 0);
+  }
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, 600%, 0);
+  }
+
+  &:hover {
+    &::before {
+      transform: translate3d(0, -750%, 0);
+    }
+
+    &::after {
+      transform: translate3d(-50%, -50%, 0);
+    }
+  }
 }
