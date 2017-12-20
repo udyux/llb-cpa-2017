@@ -3,11 +3,25 @@ body {
   color: cc(white);
   background-color: cc(grey, darker);
 
-  &.noscroll {
-    position: fixed;
+  &::after {
+    content: '';
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 100%;
+    background-color: cc(black, .95);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 275ms cb(), right 0s linear 275ms;
+  }
+
+  &.noscroll {
+    &::after {
+      right: 0;
+      opacity: 1;
+      transition: opacity 275ms cb();
+    }
   }
 
   bdo {

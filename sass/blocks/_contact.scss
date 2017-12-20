@@ -20,12 +20,12 @@
 
   &__info {
     @include type(body, alt);
-    margin-left: 10rem;
     padding-top: 2.5rem;
 
     @media (--tablet) {
       display: flex;
       justify-content: space-between;
+      margin-left: 10rem;
       text-align: right;
       padding-top: 0.5rem;
       width: 50%;

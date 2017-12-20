@@ -112,9 +112,13 @@
 
 %type-button-link {
   @extend %font-asap-700;
-  font-size: 11px;
+  font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 0.125em;
+
+  @media (--laptop) {
+    font-size: 11px;
+  }
 }
 
 %type-button-alt {
