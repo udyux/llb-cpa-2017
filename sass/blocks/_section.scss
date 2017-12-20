@@ -35,8 +35,12 @@
     @media (--tablet) {
       margin-top: 5rem;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       flex-wrap: wrap;
+
+      &--center {
+        justify-content: center;
+      }
     }
 
     @media (--desktop) {
@@ -52,14 +56,14 @@
 
     @media (--tablet) {
       width: calc(50% - 1.875rem);
-
-      &+& {
-        margin-left: 2.5rem;
-      }
     }
 
     @media (--laptop) {
       width: calc(25% - 1.875rem);
+
+      &+& {
+        margin-left: 2.5rem;
+      }
     }
   }
 
