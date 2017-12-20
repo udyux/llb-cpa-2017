@@ -123,13 +123,14 @@ $slider-duration: 6.5s;
     }
 
     @media (--laptop) {
+      width: auto;
+      height: auto;
       position: relative;
       padding-bottom: 1rem;
-      display: flex;
-      align-items: center;
       justify-content: flex-start;
       flex-direction: row;
       pointer-events: auto;
+      transform: translate3d(0, 0, 0);
     }
   }
 

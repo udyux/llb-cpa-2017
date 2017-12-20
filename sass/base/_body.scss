@@ -1,5 +1,6 @@
 body {
   @include type(body);
+  position: relative;
   color: cc(white);
   background-color: cc(grey, darker);
 
