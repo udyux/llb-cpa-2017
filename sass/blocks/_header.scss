@@ -85,11 +85,15 @@ $slider-duration: 6.5s;
     margin-right: 1.25rem;
 
     @media (--tablet) {
-      width: 300px;
+      width: 280px;
       margin-right: 2.5rem;
     }
 
-    @media (--laptop) {
+    @media (--desktop) {
+      width: 340px;
+    }
+
+    @media (--monitor) {
       width: 400px;
     }
   }
@@ -97,7 +101,7 @@ $slider-duration: 6.5s;
   &__caption {
     display: none;
 
-    @media (--laptop) {
+    @media (--desktop) {
       display: block;
     }
   }
