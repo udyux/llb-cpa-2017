@@ -7,7 +7,7 @@ const config = {
   build: './dist',
 
   server: {
-    proxy: 'llb-cpa.test',
+    proxy: false,
     port: 8080,
     sync: true
   },

@@ -44,6 +44,12 @@
   &__body {
     position: relative;
     color: cc(primary);
+    transition: opacity 300ms cb();
+
+    &.-sent {
+      opacity: 0.5;
+      pointer-events: none;
+    }
 
     @media (--tablet) {
       width: 50%;

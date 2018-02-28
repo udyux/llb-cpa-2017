@@ -17,6 +17,10 @@
     transition: opacity 475ms cb();
     pointer-events: none;
 
+    &:last-of-type {
+      background-position: 50% 0;
+    }
+
     &::before {
       content: '';
       position: absolute;
