@@ -358,11 +358,19 @@
       </aside>
 
       <form class="form__body" data-contact-form>
-        <input class="form__input" type="text" placeholder="PRÉNOM" data-field="Prénom"/>
-        <input class="form__input" type="text" placeholder="NOM" data-field="Nom"/>
-        <input class="form__input" type="email" placeholder="COURRIEL" data-field="Courriel"/>
-        <textarea class="form__input form__input--textarea" placeholder="MESSAGE" data-field="Message"></textarea>
-        <!-- <input class="form__file" id="file-input" type="file" accept="application/pdf" data-attachment/> -->
+        <input class="form__input" type="text" name="name" placeholder="PRÉNOM" data-state="ok"/>
+        <input class="form__input" type="text" name="surname" placeholder="NOM" data-state="ok"/>
+        <input class="form__input" type="email" name="email" placeholder="COURRIEL" data-state="ok"/>
+
+        <fieldset class="form__field">
+          <textarea class="form__input form__input--textarea" name="message" placeholder="MESSAGE" data-state="ok"></textarea>
+
+          <label for="file-input" class="form__file">
+            <svg class="icon"><use xlink:href="#file"/></svg>
+            <span>Joindre votre CV</span>
+            <input id="file-input" type="file" accept="application/pdf" data-attachment/>
+          </label>
+        </fieldset>
 
         <button class="button" data-label="envoyer"></button>
       </form>

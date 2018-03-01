@@ -46,9 +46,19 @@
     color: cc(primary);
     transition: opacity 300ms cb();
 
-    &.-sent {
+    &[data-state='sending'] {
       opacity: 0.5;
       pointer-events: none;
+    }
+
+    &[data-state='success'] {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &[data-state='error'] {
+      opacity: 1;
+      background-color: rgba(tomato, 0.2);
     }
 
     @media (--tablet) {
@@ -66,6 +76,10 @@
     }
   }
 
+  &__field {
+    position: relative;
+  }
+
   &__input {
     @include type(button, input);
     padding: 0.75rem 1rem;
@@ -73,9 +87,44 @@
     background-color: white;
     width: 100%;
     margin-bottom: 1.25rem;
+    border: 2px solid white;
+    transition: border 250ms cb();
+
+    &[data-state='error'] {
+      border: 2px solid rgba(tomato, 0.75);
+    }
 
     &--textarea {
-      height: 10rem;
+      height: 8rem;
+      padding-bottom: 2rem;
+      margin-bottom: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &__file {
+    @include type(button, input);
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    margin-top: -0.15rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #757575;
+    background-color: white;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    text-transform: uppercase;
+
+    .icon {
+      margin-right: 0.75rem;
+      font-size: 1.5rem;
+    }
+
+    input {
+      display: none;
     }
   }
 }
