@@ -1,5 +1,3 @@
-import arrayFrom from 'array-from'
-
 const scrollBox = document.scrollingElement || document.documentElement
 
 export default {
@@ -9,7 +7,7 @@ export default {
     scope.querySelector(query),
 
   findAll: (query, scope = document) =>
-    arrayFrom(scope.querySelectorAll(query)),
+    Array.from(scope.querySelectorAll(query)),
 
   get scrollTop() {
     return scrollBox.scrollTop

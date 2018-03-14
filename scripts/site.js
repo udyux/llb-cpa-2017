@@ -1,3 +1,4 @@
+import 'babel-polyfill'
 import './modules/icon-sprite'
 import './modules/slider'
 import './modules/scroll-to'
