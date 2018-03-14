@@ -9,6 +9,7 @@
     "build": "node -e 'require(\"./gulp.config.js\").copyAssets()' && gulp build"
   },
   "dependencies": {
+    "array-from": "^2.1.1",
     "npm": "^5.7.1",
     "scroll": "^2.0.1"
   },
