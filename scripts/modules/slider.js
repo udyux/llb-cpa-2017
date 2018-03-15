@@ -1,5 +1,6 @@
 import dom from './dom-helpers'
 
+const IE = /MSIE|rv:11/.test(window.navigator.userAgent)
 const timer = dom.find('[data-timer]')
 let index = 0
 
@@ -17,10 +18,13 @@ const swapSlides = () => {
   timer.classList.add('running')
 }
 
-timer.addEventListener('transitionend', () => {
+const resetLoop = () => {
   timer.classList.remove('running')
   setTimeout(swapSlides, 125)
-})
+}
+
+if (IE) setInterval(resetLoop, 6500)
+else timer.addEventListener('transitionend', resetLoop)
 
 setTimeout(() => {
   timer.classList.add('running')
