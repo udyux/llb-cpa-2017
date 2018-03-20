@@ -51,7 +51,7 @@
 
   &__item {
     @include type(body, small);
-    line-height: 1.8;
+    line-height: 1.5;
     margin-bottom: 3.75rem;
 
     @media (--tablet) {
