@@ -91,7 +91,11 @@ module.exports = {
 	},
 
 	jsReporter(e) {
-		console.log(e)
+    let msg = (e.loc.file)
+			? `\n[JS Error] ${e.loc.file}: ${e.message} (${e.loc.line}:${e.loc.column})\n`
+			: `\n[JS Error] ${e.message}\n`
+
+		console.log(msg)
 		this.emit('end')
 	},
 
