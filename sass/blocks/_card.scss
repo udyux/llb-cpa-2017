@@ -3,6 +3,10 @@
   position: relative;
   perspective: 100vw;
 
+  @media (--desktop) {
+    min-height: 33rem;
+  }
+
   &__front,
   &__back {
     top: 0;
