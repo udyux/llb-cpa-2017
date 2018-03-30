@@ -1,5 +1,6 @@
 import 'babel-polyfill'
 import './modules/icon-sprite'
+import './modules/init'
 import './modules/slider'
 import './modules/scroll-to'
 import './modules/dock-header'
