@@ -1,6 +1,6 @@
 import dom from './dom-helpers'
+import { IE } from './user-agent'
 
-const IE = /MSIE|rv:11/.test(window.navigator.userAgent)
 const timer = dom.find('[data-timer]')
 let index = 0
 
