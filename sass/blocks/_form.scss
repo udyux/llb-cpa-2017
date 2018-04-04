@@ -118,8 +118,14 @@
     border-bottom-right-radius: 0.5rem;
     text-transform: uppercase;
 
+    [data-attachment-name] {
+      @extend %font-sans-700i;
+      font-size: 0.9em;
+      text-transform: none;
+    }
+
     .icon {
-      margin-right: 0.75rem;
+      margin: 0 0.75rem;
       font-size: 1.5rem;
     }
 

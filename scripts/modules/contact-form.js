@@ -2,6 +2,7 @@ import dom from './dom-helpers'
 
 void ((form) => {
   if (!form) return;
+  const fileInput = dom.find('[data-attachment]', form)
 
   dom.findAll('input, textarea', form)
     .forEach(input => {
@@ -9,6 +10,13 @@ void ((form) => {
         input.dataset.state = 'ok'
       })
     })
+
+  if (fileInput) {
+    fileInput.addEventListener('change', () => {
+      if (!fileInput.files.length) return;
+      dom.find('[data-attachment-name]').innerHTML = fileInput.files[0].name
+    })
+  }
 
   form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -18,7 +26,6 @@ void ((form) => {
 
     let valid = true
     let submitted = false
-    let fileInput = dom.find('[data-attachment]', form)
 
     let fields = {
       name: dom.find('[name="name"]', form),
@@ -51,7 +58,7 @@ void ((form) => {
     formData.append('subject', 'Nouveau contact')
     formData.append('name', `${fields.name.value} ${fields.surname.value}`)
 
-    if (fileInput) formData.append('attachment', fileInput.files[0])
+    if (fileInput && fileInput.files.length) formData.append('attachment', fileInput.files[0])
 
     http.addEventListener('load', function() {
       if (this.status >= 200 && this.status < 400) {
