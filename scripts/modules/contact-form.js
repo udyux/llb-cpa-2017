@@ -53,7 +53,7 @@ void ((form) => {
     form.dataset.state = 'sending'
     formData.append('sitename', 'llb-cpa')
     formData.append('email', fields.email.value)
-    formData.append('mailto', 'reception@llbcpa.ca')
+    formData.append('mailto', 'reception@llbcpa.ca;info@llbcpa.ca;pascal@ateliermade.ca;')
     formData.append('message', fields.message.value)
     formData.append('subject', 'Nouveau contact')
     formData.append('name', `${fields.name.value} ${fields.surname.value}`)
