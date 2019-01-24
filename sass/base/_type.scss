@@ -44,6 +44,10 @@
   line-height: 2;
 }
 
+%type-strong {
+  @extend %font-asap-700;
+}
+
 %type-title {
   @extend %font-sans-700;
   font-size: 22px;

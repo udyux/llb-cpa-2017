@@ -5,8 +5,9 @@
   "author": "Nicolas Udy <dev@udy.io>",
   "private": true,
   "scripts": {
-    "dev": "gulp dev",
-    "build": "node -e 'require(\"./gulp.config.js\").copyAssets()' && gulp build"
+    "start": "yarn sprite && gulp dev",
+    "sprite": "node ./spritefile",
+    "build": "yarn sprite && node -e 'require(\"./gulp.config.js\").copyAssets()' && gulp build"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
@@ -44,7 +45,9 @@
     "rollup-plugin-commonjs": "^8.1.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "stylelint": "^9.10.1",
-    "stylelint-config-udyux": "^1.2.4"
+    "stylelint-config-udyux": "^1.2.4",
+    "svgo": "^1.1.1",
+    "svgstore": "^3.0.0-2"
   },
   "engines": {
     "node": ">= 6.0.0",

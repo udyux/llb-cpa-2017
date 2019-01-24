@@ -7,7 +7,7 @@
   }
 
   &__slide {
-    @include bg-cover ();
+    @include bg-cover();
     position: absolute;
     top: 0;
     left: 0;

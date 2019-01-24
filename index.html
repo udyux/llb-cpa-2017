@@ -51,7 +51,7 @@
 
   <main>
     <section class="landing">
-      <article class="landing__slide active-slide" style="background-image:url(/assets/media/backgrounds/landing-a.jpg)" data-slide>
+      <article class="landing__slide active-slide" style="background-image:url('/assets/media/backgrounds/landing-a.jpg')" data-slide>
         <hgroup class="landing__content">
           <h1 class="landing__title">Une équipe experte et engagée</h1>
           <h2 class="landing__subtitle">Misant sur la colla­boration</h2>
@@ -59,7 +59,7 @@
         </hgroup>
       </article>
 
-      <article class="landing__slide" style="background-image:url(/assets/media/backgrounds/landing-b.jpg)" data-slide>
+      <article class="landing__slide" style="background-image:url('/assets/media/backgrounds/landing-b.jpg')" data-slide>
         <hgroup class="landing__content">
           <h1 class="landing__title">Conseils &amp; accompagnement</h1>
           <h2 class="landing__subtitle">Afin de maximiser vos résultats</h2>
@@ -67,7 +67,7 @@
         </hgroup>
       </article>
 
-      <article class="landing__slide" style="background-image:url(/assets/media/backgrounds/cta.jpg)" data-slide>
+      <article class="landing__slide" style="background-image:url('/assets/media/backgrounds/cta.jpg')" data-slide>
         <hgroup class="landing__content">
           <h1 class="landing__title">Des dirigeants &amp; employés</h1>
           <h2 class="landing__subtitle">Dignes de confiance</h2>
@@ -76,7 +76,35 @@
       </article>
 
       <a class="landing__lead" href="#approach" data-scroll-to></a>
+
+      <div class="notification">
+        <div class="notification__content">
+          <figure class="notification__logo" style="background-image: url('/assets/media/logo/grant-thornton-logo.png')"></figure>
+          <hr class="notification__border" />
+          <p>C'est avec enthousiasme que l'équipe de Laberge Lafleur Brown regroupe ses activités à celles de <strong>Raymond Chabot Grant Thornton.</strong></p>
+          <p>Ainsi, ils unissent leurs forces afin de toujours mieux servir une clientèle dans un marché en constante évolution.</p>
+        </div>
+      </div>
     </section>
+
+    <div class="notification -mobile" data-notification>
+      <header class="notification__banner">
+        <figure class="notification__logo" style="background-image: url('/assets/media/logo/grant-thornton-logo.png')"></figure>
+        <h6>Laberge Lafleur Brown se joint à <strong>Raymond Chabot Grant Thornton.</strong></h6>
+        <svg class="icon notification__icon"><use xlink:href="#expand" /></svg>
+      </header>
+
+      <div class="notification__content">
+        <header class="notification__banner -flat">
+          <figure class="notification__logo" style="background-image: url('/assets/media/logo/grant-thornton-logo.png')"></figure>
+          <i class="notification__icon -close">&times;</i>
+        </header>
+
+        <hr class="notification__border" />
+        <p>C'est avec enthousiasme que l'équipe de Laberge Lafleur Brown regroupe ses activités à celles de <strong>Raymond Chabot Grant Thornton.</strong></p>
+        <p>Ainsi, ils unissent leurs forces afin de toujours mieux servir une clientèle dans un marché en constante évolution.</p>
+      </div>
+    </div>
 
     <section id="approach" class="section section--accent">
       <h3 class="section__title">Notre approche</h3>
@@ -393,7 +421,7 @@
         <ul>
           <li>Téléphone : <span class="contact__block">418 659-7265</span></li>
           <li>Télécopieur : <span class="contact__block">418 659-5937</span></li>
-          <li>Courriel : <a href="mailto:reception@llbcpa.ca" class="contact__block">reception@llbcpa.ca</span></li>
+          <li>Courriel : <a href="mailto:reception@llbcpa.ca" class="contact__block">reception@llbcpa.ca</a></li>
         </ul>
       </div>
     </section>

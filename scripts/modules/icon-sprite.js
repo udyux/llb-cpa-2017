@@ -2,10 +2,9 @@ import fetch from './fetch'
 
 fetch('/assets/icons/sprite.svg')
   .then(sprite => {
-    const figure = document.createElement('figure')
-    figure.style.display = 'none'
-    figure.innerHTML = sprite
-    document.body.insertBefore(figure, document.body.children[0])
+    const parser = document.createElement('div')
+    parser.innerHTML = sprite
+    document.body.insertBefore(parser.firstChild.cloneNode(true), document.body.firstChild)
   })
   .catch(err => {
     console.warn('Icon spritesheet could not be loaded\n', err)

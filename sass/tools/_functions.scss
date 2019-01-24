@@ -12,7 +12,7 @@
 @function cc($color, $option: false, $alpha: false) {
   $opacity: if($alpha, $alpha, if(type-of($option) == 'number', $option, false));
   $variant: if(not $option, default, if(type-of($option) == 'number', default, $option));
-  $scope: map-get($color-map, $color);
+  $scope: map-get($color-map, $variant);
 
-  @return if($opacity, rgba(map-get($scope, $variant), $opacity), map-get($scope, $variant));
+  @return if($opacity, rgba(map-get($scope, $color), $opacity), map-get($scope, $color));
 }

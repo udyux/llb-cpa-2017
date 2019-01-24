@@ -1,0 +1,96 @@
+.notification {
+  @include type(body, alt);
+  position: relative;
+  display: none;
+  color: cc(notif);
+  background-color: white;
+  line-height: 1.55;
+
+  @media (--tablet) {
+    position: absolute;
+    bottom: 2.125rem;
+    left: 2.125rem;
+    display: block;
+    width: 21.5rem;
+  }
+
+  &.-mobile {
+    display: block;
+
+    @media (--tablet) {
+      display: none;
+    }
+  }
+
+  p + p {
+    margin-top: 1rem;
+  }
+
+  strong {
+    @include type(strong);
+  }
+
+  &__content {
+    padding: 1.5rem;
+    background-color: white;
+
+    .-mobile & {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      transform: translate3d(0, 17.5%, 0);
+      transition: transform 225ms cb(jay), opacity 200ms linear;
+    }
+
+    .-mobile.-expand & {
+      opacity: 1;
+      transform: translateZ(0);
+    }
+  }
+
+  &__banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background-color: white;
+
+    &.-flat {
+      padding: 0;
+    }
+
+    h6 {
+      flex-grow: 1;
+      margin-left: 1.5rem;
+    }
+
+    strong {
+      display: block;
+    }
+  }
+
+  &__logo {
+    @include bg-cover();
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+
+  &__border {
+    height: 2px;
+    margin: 1.125rem 0;
+    background-color: currentColor;
+  }
+
+  &__icon {
+    margin-left: 1rem;
+    color: cc(grey, darker);
+    font-size: 1.5rem;
+
+    &.-close {
+      margin-top: -0.25rem;
+      line-height: 0;
+    }
+  }
+}
