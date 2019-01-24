@@ -1,24 +1,24 @@
 $slider-duration: 6.5s;
 
 .header {
-  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  padding: 1.25rem 1.25rem 0.75rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.25rem 1.25rem 0.75rem;
   background-color: cc(black, 0);
-  transition: background-color 225ms cb();
   z-index: 1;
+  transition: background-color 225ms cb();
 
   @media (--tablet) {
     padding: 2rem 2.5rem 1rem;
   }
 
   &--docked {
-    background-color: cc(black, .9);
+    background-color: cc(black, 0.9);
   }
 
   &__timer {
@@ -60,12 +60,12 @@ $slider-duration: 6.5s;
 
   &__details {
     @extend %font-serif-300;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
     width: 100%;
     font-size: 10px;
     line-height: 1.25;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     white-space: nowrap;
 
     @media (--tablet) {
@@ -74,8 +74,8 @@ $slider-duration: 6.5s;
     }
 
     @media (--laptop) {
-      width: auto;
       justify-content: flex-start;
+      width: auto;
     }
   }
 
@@ -110,31 +110,31 @@ $slider-duration: 6.5s;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
     transform: translate3d(0, -100%, 0);
     pointer-events: none;
     transition: all 425ms cb();
+
+    @media (--laptop) {
+      position: relative;
+      flex-direction: row;
+      justify-content: flex-start;
+      width: auto;
+      height: auto;
+      padding-bottom: 1rem;
+      transform: translate3d(0, 0, 0);
+      pointer-events: auto;
+    }
 
     .header--open & {
       opacity: 1;
       transform: translate3d(0, 0, 0);
       pointer-events: auto;
-    }
-
-    @media (--laptop) {
-      width: auto;
-      height: auto;
-      position: relative;
-      padding-bottom: 1rem;
-      justify-content: flex-start;
-      flex-direction: row;
-      pointer-events: auto;
-      transform: translate3d(0, 0, 0);
     }
   }
 
@@ -153,13 +153,13 @@ $slider-duration: 6.5s;
       width: 100%;
       height: 2px;
       background-color: currentColor;
-      transform: translate3d(0, 6px, 0);
       opacity: 0;
+      transform: translate3d(0, 6px, 0);
       transition: 225ms cb();
       transition-property: transform opacity;
     }
 
-    &+& {
+    & + & {
       margin-top: 1rem;
 
       @media (--laptop) {
@@ -183,7 +183,7 @@ $slider-duration: 6.5s;
         display: none;
       }
 
-      &+& {
+      & + & {
         margin-left: 1.5rem;
       }
 
@@ -210,8 +210,8 @@ $slider-duration: 6.5s;
     top: 50%;
     right: 1.25rem;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     transform: translate3d(0, -50%, 0);
 
     @media (--tablet) {
@@ -234,13 +234,13 @@ $slider-duration: 6.5s;
       &::before,
       &::after {
         content: '';
-        width: 100%;
-        height: 100%;
         position: absolute;
         top: 0;
         left: 0;
-        border-radius: inherit;
+        width: 100%;
+        height: 100%;
         background-color: currentColor;
+        border-radius: inherit;
         backface-visibility: hidden;
         transition: transform 300ms cb();
       }

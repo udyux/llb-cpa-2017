@@ -1,6 +1,6 @@
 .card {
-  min-height: 24rem;
   position: relative;
+  min-height: 24rem;
   perspective: 100vw;
 
   @media (--desktop) {
@@ -9,14 +9,14 @@
 
   &__front,
   &__back {
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
-    position: relative;
     padding-bottom: 1.25rem;
-    transition: all 325ms cb();
-    backface-visibility: hidden;
     transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: all 325ms cb();
   }
 
   &__front {

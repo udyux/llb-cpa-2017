@@ -1,24 +1,23 @@
 import dom from './dom-helpers'
 
-void ((form) => {
-  if (!form) return;
+const contactForm = form => {
+  if (!form) return
   const fileInput = dom.find('[data-attachment]', form)
 
-  dom.findAll('input, textarea', form)
-    .forEach(input => {
-      input.addEventListener('focus', () => {
-        input.dataset.state = 'ok'
-      })
+  dom.findAll('input, textarea', form).forEach(input => {
+    input.addEventListener('focus', () => {
+      input.dataset.state = 'ok'
     })
+  })
 
   if (fileInput) {
     fileInput.addEventListener('change', () => {
-      if (!fileInput.files.length) return;
+      if (!fileInput.files.length) return
       dom.find('[data-attachment-name]').innerHTML = fileInput.files[0].name
     })
   }
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', e => {
     e.preventDefault()
 
     const http = new XMLHttpRequest()
@@ -27,25 +26,24 @@ void ((form) => {
     let valid = true
     let submitted = false
 
-    let fields = {
+    const fields = {
       name: dom.find('[name="name"]', form),
       surname: dom.find('[name="surname"]', form),
       email: dom.find('[name="email"]', form),
       message: dom.find('[name="message"]', form)
     }
 
-    Object.values(fields)
-      .forEach(field => {
-        if (!field.value || !field.value.length) {
-          field.dataset.state = 'error'
-          valid = false
-        } else if (field.name === 'email' && !/.+@.+\..+/.test(field.value)) {
-          field.dataset.state = 'error'
-          valid = false
-        }
-      })
+    Object.values(fields).forEach(field => {
+      if (!field.value || !field.value.length) {
+        field.dataset.state = 'error'
+        valid = false
+      } else if (field.name === 'email' && !/.+@.+\..+/.test(field.value)) {
+        field.dataset.state = 'error'
+        valid = false
+      }
+    })
 
-    if (submitted || !valid) return;
+    if (submitted || !valid) return
     submitted = true
 
     http.open('POST', 'http://udy.io/api/mail/', true)
@@ -70,4 +68,6 @@ void ((form) => {
 
     http.send(formData)
   })
-})(dom.find('[data-contact-form]'))
+}
+
+contactForm(dom.find('[data-contact-form]'))

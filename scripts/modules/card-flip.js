@@ -2,14 +2,11 @@ import dom from './dom-helpers'
 
 const nodes = dom.findAll('[data-card]')
 
-const getFlipHandler = (node) =>
-  () => node.classList.add('card--flip')
+const getFlipHandler = node => () => node.classList.add('card--flip')
 
-const getUnflipHandler = (node) =>
-  () => node.classList.remove('card--flip')
+const getUnflipHandler = node => () => node.classList.remove('card--flip')
 
-const sortByHeight = ([front, back]) =>
-  (front.clientHeight < back.clientHeight) ? [front, back] : [back, front]
+const sortByHeight = ([front, back]) => (front.clientHeight < back.clientHeight ? [front, back] : [back, front])
 
 const getResizeBuffer = () => {
   let buffer
@@ -34,15 +31,13 @@ const getResizeBuffer = () => {
 }
 
 nodes.forEach(node => {
-  dom.findAll('[data-card-flip]', node)
-    .forEach(flipNode => {
-      flipNode.addEventListener('click', getFlipHandler(node))
-    })
+  dom.findAll('[data-card-flip]', node).forEach(flipNode => {
+    flipNode.addEventListener('click', getFlipHandler(node))
+  })
 
-  dom.findAll('[data-card-unflip]', node)
-    .forEach(unflipNode => {
-      unflipNode.addEventListener('click', getUnflipHandler(node))
-    })
+  dom.findAll('[data-card-unflip]', node).forEach(unflipNode => {
+    unflipNode.addEventListener('click', getUnflipHandler(node))
+  })
 })
 
 setTimeout(() => {

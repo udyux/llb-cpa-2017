@@ -15,8 +15,8 @@
   }
 
   &--light {
-    background-color: white;
     color: cc(grey, darker);
+    background-color: white;
   }
 
   &__title {
@@ -33,10 +33,10 @@
     margin-top: 2.5rem;
 
     @media (--tablet) {
-      margin-top: 5rem;
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 5rem;
 
       &--center {
         justify-content: center;
@@ -51,8 +51,8 @@
 
   &__item {
     @include type(body, small);
-    line-height: 1.5;
     margin-bottom: 3.75rem;
+    line-height: 1.5;
 
     @media (--tablet) {
       width: calc(50% - 2rem);
@@ -61,7 +61,7 @@
     @media (--laptop) {
       width: calc(25% - 2rem);
 
-      &+& {
+      & + & {
         margin-left: 2.5rem;
       }
     }
@@ -77,36 +77,36 @@
   }
 
   &__graphic {
+    height: 7.5rem;
     color: cc(grey, lighter);
     font-size: 4rem;
     text-align: center;
-    height: 7.5rem;
 
     &.-png {
       padding-top: 1.2rem;
     }
 
     img {
-      height: 4rem;
       width: auto;
+      height: 4rem;
       margin: 0 auto;
     }
   }
 
   &__button {
     @include type(heading);
+    display: inline-block;
     min-width: 200px;
     margin: 0 auto;
     padding: 0.25rem;
     border: 3px solid currentColor;
     border-radius: 0.5rem;
-    display: inline-block;
 
     @media (--tablet) {
       margin: 0;
     }
 
-    &+& {
+    & + & {
       margin-top: 1.25rem;
 
       @media (--tablet) {

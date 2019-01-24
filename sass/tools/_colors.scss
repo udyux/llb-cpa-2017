@@ -1,21 +1,22 @@
 // cc color map
-$colors:(
-  default:(
-    white: #fff,
-    grey: #464c4d,
-    primary: #ec8a00,
-    accent: #0074b6,
-    navy: #002c37,
+$colors: (
+  default: (
+    white: #FFF,
+    grey: #464C4D,
+    primary: #EC8A00,
+    accent: #0074B6,
+    navy: #002C37,
     black: #050505
   ),
-
-  lighter:(
-    grey: #ddd
+  lighter: (
+    grey: #DDD
   ),
-
-  darker:(
-    white: #eeecec,
-    grey: #2b2f31,
-    navy: #001f27
+  neutral: (
+    grey: #757575
+  ),
+  darker: (
+    white: #EEECEC,
+    grey: #2B2F31,
+    navy: #001F27
   )
 );

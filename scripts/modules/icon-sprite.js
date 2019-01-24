@@ -2,7 +2,7 @@ import fetch from './fetch'
 
 fetch('/assets/icons/sprite.svg')
   .then(sprite => {
-    let figure = document.createElement('figure')
+    const figure = document.createElement('figure')
     figure.style.display = 'none'
     figure.innerHTML = sprite
     document.body.insertBefore(figure, document.body.children[0])

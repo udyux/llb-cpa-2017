@@ -5,21 +5,14 @@
 
 // em
 @function em($pixels, $context: 16) {
-  @return #{$pixels/$context}em;
+  @return #{$pixels / $context}em;
 }
 
 // color-control
 @function cc($color, $option: false, $alpha: false) {
-  $opacity: null;
-  $palette: null;
+  $opacity: if($alpha, $alpha, if(type-of($option) == 'number', $option, false));
+  $variant: if(not $option, default, if(type-of($option) == 'number', default, $option));
+  $scope: map-get($color-map, $color);
 
-  @if ($alpha)  {$opacity: $alpha;}
-  @else         {$opacity: if(type-of($option) == 'number', $option, false);}
-
-  @if ($option) {$palette: if(type-of($option) == 'number', default, $option);}
-  @else         {$palette: default;}
-
-  $getPalette: map-get($colors, $palette);
-
-  @return if($opacity, rgba(map-get($getPalette, $color), $opacity), map-get($getPalette, $color));
+  @return if($opacity, rgba(map-get($scope, $variant), $opacity), map-get($scope, $variant));
 }

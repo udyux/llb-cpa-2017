@@ -1,6 +1,11 @@
 .form {
-  @include bg-cover;
+  @include bg-cover();
   text-align: left;
+
+  @media (--tablet) {
+    display: flex;
+    justify-content: center;
+  }
 
   &::before {
     content: '';
@@ -12,16 +17,11 @@
     background-color: rgba(black, 0.55);
   }
 
-  @media (--tablet) {
-    display: flex;
-    justify-content: center;
-  }
-
   &__text {
     position: relative;
+    margin-bottom: 2.5rem;
     font-size: 14px;
     line-height: 1.6rem;
-    margin-bottom: 2.5rem;
 
     @media (--tablet) {
       width: 50%;
@@ -46,21 +46,6 @@
     color: cc(primary);
     transition: opacity 300ms cb();
 
-    &[data-state='sending'] {
-      opacity: 0.5;
-      pointer-events: none;
-    }
-
-    &[data-state='success'] {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    &[data-state='error'] {
-      opacity: 1;
-      background-color: rgba(tomato, 0.2);
-    }
-
     @media (--tablet) {
       width: 50%;
       padding-left: 2.5rem;
@@ -74,6 +59,21 @@
       max-width: 35rem;
       margin-left: 9rem;
     }
+
+    &[data-state='sending'] {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    &[data-state='success'] {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &[data-state='error'] {
+      background-color: rgba(tomato, 0.2);
+      opacity: 1;
+    }
   }
 
   &__field {
@@ -82,12 +82,12 @@
 
   &__input {
     @include type(button, input);
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-    background-color: white;
     width: 100%;
     margin-bottom: 1.25rem;
+    padding: 0.75rem 1rem;
+    background-color: white;
     border: 2px solid white;
+    border-radius: 0.5rem;
     transition: border 250ms cb();
 
     &[data-state='error'] {
@@ -96,8 +96,8 @@
 
     &--textarea {
       height: 8rem;
-      padding-bottom: 2rem;
       margin-bottom: 0;
+      padding-bottom: 2rem;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     }
@@ -105,17 +105,17 @@
 
   &__file {
     @include type(button, input);
-    cursor: pointer;
-    padding: 0.5rem 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     margin-top: -0.15rem;
     margin-bottom: 1.25rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    color: #757575;
+    padding: 0.5rem 0.75rem;
+    color: cc(grey, neutral);
     background-color: white;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
+    cursor: pointer;
     text-transform: uppercase;
 
     [data-attachment-name] {

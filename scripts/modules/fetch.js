@@ -1,13 +1,13 @@
-export default (uri) => {
+export default uri => {
   const xhr = new XMLHttpRequest()
   let errorHandler = () => {}
 
   xhr.open('GET', uri, true)
 
   return {
-    then: (cb) => {
+    then: cb => {
       xhr.onload = function() {
-        let validResponse = this.status < 200 || this.status >= 400
+        const validResponse = this.status < 200 || this.status >= 400
         if (validResponse && errorHandler) errorHandler(this)
         cb(this.response)
       }
@@ -16,7 +16,9 @@ export default (uri) => {
       xhr.send()
 
       return {
-        catch: (handler) => { errorHandler = handler }
+        catch: handler => {
+          errorHandler = handler
+        }
       }
     }
   }

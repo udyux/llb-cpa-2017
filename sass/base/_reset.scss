@@ -3,18 +3,18 @@
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-  border-radius: 0;
-  border: none;
-  outline: none;
   background: none;
-  -webkit-margin-before: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
   -webkit-margin-after: 0;
-  -webkit-margin-start: 0;
+  -webkit-margin-before: 0;
   -webkit-margin-end: 0;
-  -webkit-padding-before: 0;
-  -webkit-padding-start: 0;
-  -webkit-padding-end: 0;
+  -webkit-margin-start: 0;
   -webkit-padding-after: 0;
+  -webkit-padding-before: 0;
+  -webkit-padding-end: 0;
+  -webkit-padding-start: 0;
 }
 
 *::before,
@@ -29,8 +29,8 @@
 
 html {
   box-sizing: border-box;
-  font-size: 100%;
   height: 100%;
+  font-size: 100%;
 }
 
 body {
@@ -40,16 +40,32 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-b, i, em, strong,
-h1, h2, h3, h4, h5, h6,
-th, td, pre, ins, del, address,
-input, select, button, textarea {
-  text-transform: inherit;
+b,
+i,
+em,
+strong,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+th,
+td,
+pre,
+ins,
+del,
+address,
+input,
+select,
+button,
+textarea {
   font-family: inherit;
   font-size: inherit;
-  font-weight: normal;
   font-style: normal;
+  font-weight: 400;
   letter-spacing: inherit;
+  text-transform: inherit;
 }
 
 textarea,
@@ -58,12 +74,16 @@ input {
   background-clip: padding-box;
 }
 
-a, ins, del, button {
+a,
+ins,
+del,
+button {
   color: inherit;
   text-decoration: none;
 }
 
-ul, ol,
+ul,
+ol,
 menu {
   list-style: none;
 }
@@ -95,14 +115,15 @@ form {
 }
 
 button {
-  cursor: pointer;
   overflow: visible;
+  cursor: pointer;
 }
 
 textarea {
   resize: none;
 }
 
+// stylelint-disable-next-line
 ::moz-focus-inner {
   padding: 0;
   border: none;

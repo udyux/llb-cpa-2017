@@ -1,13 +1,27 @@
-// font families
-%font-asap-400 { @include type-font('Asap') }
-%font-asap-700 { @include type-font('Asap', 700) }
-%font-sans-300 { @include type-font('Source Sans Pro', 300) }
-%font-sans-700 { @include type-font('Source Sans Pro', 700) }
-%font-sans-700i { @include type-font('Source Sans Pro', 700, italic) }
-%font-serif-300 { @include type-font('Merriweather', 300, italic, serif) }
-%font-serif-900 { @include type-font('Merriweather', 900, italic, serif) }
+// stylelint-disable
+%font-asap-400 {
+  @include type-font('Asap');
+}
+%font-asap-700 {
+  @include type-font('Asap', 700);
+}
+%font-sans-300 {
+  @include type-font('Source Sans Pro', 300);
+}
+%font-sans-700 {
+  @include type-font('Source Sans Pro', 700);
+}
+%font-sans-700i {
+  @include type-font('Source Sans Pro', 700, italic);
+}
+%font-serif-300 {
+  @include type-font('Merriweather', 300, italic, serif);
+}
+%font-serif-900 {
+  @include type-font('Merriweather', 900, italic, serif);
+}
+// stylelint-enable
 
-// extend placeholders
 %type-body {
   @extend %font-serif-300;
   font-size: 15px;
@@ -93,15 +107,15 @@
 %type-heading-map {
   @extend %font-asap-700;
   font-size: 16px;
-  text-transform: uppercase;
   letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 %type-button {
   @extend %font-asap-700;
   font-size: 12px;
-  text-transform: uppercase;
   letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 %type-button-input {
@@ -113,8 +127,8 @@
 %type-button-link {
   @extend %font-asap-700;
   font-size: 15px;
-  text-transform: uppercase;
   letter-spacing: 0.125em;
+  text-transform: uppercase;
 
   @media (--laptop) {
     font-size: 11px;

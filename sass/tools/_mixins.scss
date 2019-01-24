@@ -1,20 +1,23 @@
 // font-family helper
 @mixin type-font($family, $weight: normal, $style: normal, $type: sans-serif) {
   font-family: #{$family}, #{$type};
-  font-weight: $weight;
   font-style: $style;
+  font-weight: $weight;
 }
 
 // type-settings helper
 @mixin type($name, $space: false) {
-  @if ($space) { @extend %type-#{$name}-#{$space}; }
-  @else { @extend %type-#{$name}; }
+  @if ($space) {
+    @extend %type-#{$name}-#{$space};
+  } @else {
+    @extend %type-#{$name};
+  }
 }
 
 // background image cover
 @mixin bg-cover($pos: center) {
   position: relative;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: $pos;
+  background-position: $pos;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
