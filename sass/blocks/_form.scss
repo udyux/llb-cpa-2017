@@ -74,6 +74,10 @@
       background-color: rgba(tomato, 0.2);
       opacity: 1;
     }
+
+    button {
+      margin-top: 1rem;
+    }
   }
 
   &__field {
@@ -98,8 +102,8 @@
       height: 8rem;
       margin-bottom: 0;
       padding-bottom: 2rem;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
+      // border-bottom-left-radius: 0;
+      // border-bottom-right-radius: 0;
     }
   }
 

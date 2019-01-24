@@ -1,5 +1,5 @@
 import dom from './dom-helpers'
 
-dom.find('[data-notification').addEventListener('click', function() {
-  this.classList.toggle('-expand')
-})
+const notification = dom.find('[data-notification]')
+
+notification.addEventListener('click', () => notification.classList.toggle('-expand'))

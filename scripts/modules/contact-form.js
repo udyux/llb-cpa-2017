@@ -51,7 +51,7 @@ const contactForm = form => {
     form.dataset.state = 'sending'
     formData.append('sitename', 'llb-cpa')
     formData.append('email', fields.email.value)
-    formData.append('mailto', 'reception@llbcpa.ca;info@llbcpa.ca;pascal@ateliermade.ca;support@adsumtech.com;')
+    formData.append('mailto', 'webquebec@rcgt.com;info@llbcpa.ca;pascal@ateliermade.ca;support@adsumtech.com;')
     formData.append('message', fields.message.value)
     formData.append('subject', 'Nouveau contact')
     formData.append('name', `${fields.name.value} ${fields.surname.value}`)
